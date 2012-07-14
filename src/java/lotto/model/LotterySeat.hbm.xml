@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.LotterySeat" table="lotterySeat">
+    <composite-id class="lotto.model.LotterySeatId" name="id">
+      <key-property name="lotteryId" type="int">
+        <column name="lotteryId"/>
+      </key-property>
+      <key-property name="section" type="int">
+        <column name="section"/>
+      </key-property>
+      <key-property name="row" type="int">
+        <column name="row"/>
+      </key-property>
+      <key-property name="seatNo" type="int">
+        <column name="seatNo"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="lotto.model.LotteryEvent" fetch="select" insert="false" name="lotteryEvent" update="false">
+      <column name="lotteryId" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="lotto.model.VenueSeat" fetch="select" insert="false" name="venueSeat" update="false">
+      <column name="section" not-null="true"/>
+      <column name="row" not-null="true"/>
+      <column name="seatNo" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="lotto.model.StudentInfo" fetch="select" name="studentInfo">
+      <column name="assignedTo"/>
+    </many-to-one>
+    <many-to-one class="lotto.model.StudentGroup" fetch="select" name="studentGroup">
+      <column name="heldForGroup"/>
+    </many-to-one>
+    <property name="price" type="java.lang.Double">
+      <column name="price" precision="22" scale="0"/>
+    </property>
+    <property name="claimed" type="java.lang.Short">
+      <column name="claimed"/>
+    </property>
+    <property name="claimTime" type="timestamp">
+      <column length="19" name="claimTime"/>
+    </property>
+    <property name="paid" type="java.lang.Short">
+      <column name="paid"/>
+    </property>
+    <property name="paidTime" type="timestamp">
+      <column length="19" name="paidTime"/>
+    </property>
+  </class>
+</hibernate-mapping>

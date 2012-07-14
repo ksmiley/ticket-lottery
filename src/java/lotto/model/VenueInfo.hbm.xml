@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.VenueInfo" table="venueInfo">
+    <id name="venueId" type="java.lang.Integer">
+      <column name="venueId"/>
+      <generator class="identity"/>
+    </id>
+    <property name="name" type="string">
+      <column length="100" name="name" not-null="true"/>
+    </property>
+    <property name="addrLine1" type="string">
+      <column length="60" name="addrLine1"/>
+    </property>
+    <property name="addrLine2" type="string">
+      <column length="60" name="addrLine2"/>
+    </property>
+    <property name="addrCity" type="string">
+      <column length="30" name="addrCity"/>
+    </property>
+    <property name="addrState" type="string">
+      <column length="15" name="addrState"/>
+    </property>
+    <property name="addrZip" type="string">
+      <column length="10" name="addrZip"/>
+    </property>
+    <property name="phoneNumber" type="string">
+      <column length="20" name="phoneNumber"/>
+    </property>
+    <set cascade="all-delete-orphan" inverse="true" name="venueSections">
+      <key on-delete="cascade">
+        <column name="venue" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.VenueSection"/>
+    </set>
+    <set cascade="all-delete-orphan" inverse="true" name="lotteryEvents">
+      <key>
+        <column name="venue" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.LotteryEvent"/>
+    </set>
+  </class>
+</hibernate-mapping>

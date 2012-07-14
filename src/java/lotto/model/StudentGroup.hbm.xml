@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.StudentGroup" table="studentGroup">
+    <id name="groupId" type="java.lang.Integer">
+      <column name="groupId"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="lotto.model.LotteryEvent" fetch="select" name="lotteryEvent">
+      <column name="lottery" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="lotto.model.StudentInfo" fetch="select" name="studentInfo">
+      <column name="owner" not-null="true"/>
+    </many-to-one>
+    <property name="name" type="string">
+      <column length="60" name="name" not-null="true"/>
+    </property>
+    <set cascade="all-delete-orphan" inverse="true" name="lotterySeats">
+      <key>
+        <column name="heldForGroup"/>
+      </key>
+      <one-to-many class="lotto.model.LotterySeat"/>
+    </set>
+    <set cascade="all-delete-orphan" inverse="true" name="lotteryRegistrations">
+      <key>
+        <column name="groupId"/>
+      </key>
+      <one-to-many class="lotto.model.LotteryRegistration"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.VenueSection" table="venueSection">
+    <id name="sectionId" type="java.lang.Integer">
+      <column name="sectionId"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="lotto.model.VenueInfo" fetch="select" name="venueInfo">
+      <column name="venue" not-null="true"/>
+    </many-to-one>
+    <property name="label" type="string">
+      <column length="30" name="label" not-null="true"/>
+    </property>
+    <property name="location" type="string">
+      <column length="30" name="location"/>
+    </property>
+    <property name="position" type="java.lang.Integer">
+      <column name="position"/>
+    </property>
+    <set cascade="all-delete-orphan" inverse="true" name="venueRows">
+      <key on-delete="cascade">
+        <column name="sectionId" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.VenueRow"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>U Ticket Lottery</title>
+<link href="lottolayout.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div id="container">
+  <div id="header">
+    <h1><img src="lottologo.png" alt="U Ticket Lottery" width="370" height="90" /></h1>
+	<h2 id="banner">CS499 Group 3 Phase II</h2>
+  </div>
+  <div id="mainContent">
+
+
+<div id="sidebar" class="on_left">
+<h3>Table of Contents</h3>
+<ul>
+<li><a href="high_level_design.html">High Level Design</a></li>
+<li><a href="detailed_design.html">Detailed Design</a></li>
+<li><a href="implementation.html">Implementation</a></li>
+<li><a href="testing.html">Testing</a></li>
+<li><a href="metrics.html">Technical Metrics</a></li>
+</ul>
+
+</div>
+<div id="main_col" class="on_right">
+<h1>Implementation</h1>
+
+<img src="project_listing.png" width="212" height="1500" class="float_right" style="margin-left: 20px;" />
+<p><em>At right: The full file listing for the Ticket Lottery application</em></p>
+<p>
+The Ticket Lottery application is written primarily in Java, using a variety of frameworks to ease development and support the project's architecture goals. They include:
+</p>
+<ul>
+<li><a href="http://java.sun.com/products/servlet/">Java Servlets</a>, for interfacing with the user's Web browser</li>
+<li><a href="http://www.springsource.org/">Spring and Spring MVC</a>, to implement the Model-View-Controller architecture</li>
+<li><a href="http://java.sun.com/products/jsp/">Java Server Pages</a>, for the view implementation</li>
+<li><a href="https://www.hibernate.org/">Hibernate</a>, an object-relational mapping framework that implements the model</li>
+<li><a href="http://static.springsource.org/spring-security/site/">Spring Security</a>, an addition to the Spring system that helps with user authentication and securing the interfaces from unauthorized access.</li>
+</ul>
+
+<p>
+Parts of the application are written in JavaScript and run on the user's computer, under the Web browser. This reduces the number of requests the browser has to make to the server to get more information, which in turn provides the user with a faster and better experience. The <a href="http://www.jquery.com/">jQuery</a> JavaScript library is used heavily to help make the client-side operations reliable across a wide range of browsers.</p>
+
+<h2>Documentation</h2>
+
+<p>Documentation for users and administrators are included in the interfaces. No separate manuals are required.</p>
+
+<p>Because of the specialized nature of the Ticket Lottery application, there is no clean-cut installation process. Roughly, it requires:</p>
+<ol>
+	<li>Install a Java servlet container. While any container should work, the application is only tested on Apache Tomcat 6.</li>
+    <li>Install a relational database system. Currently only MySQL with InnoDB is supported, though other databases could be supported with minor modifications.</li>
+    <li>Create a database and user for the Ticket Lottery, and import the lottery_schema.sql file from the application's distribution. Edit the jdbc.properties file to match the MySQL database location and settings.</li>
+    <li>Deploy the self-contained TicketLottery.war file to your servlet container. This process is dependent on which container you choose to run.</li>
+    <li>Hire an outside consultant to integrate the Ticket Lottery with your existing user system and ticketing procedure.</li> 
+</ol>
+
+<h2>Source Code</h2>
+
+<ul>
+<li>
+<a href="TicketLottery-src.zip">Download the full Ticket Lottery source code as a ZIP file
+</a></li>
+<li><a href="TicketLottery.war.zip">Download the compiled TicketLottery.war, which is (more or less) ready to be deployed.</li>
+</div>
+
+  </div>
+  <div id="footer">
+    <p>The best little lotto U could get.</p>
+  </div>
+</div>
+</body>
+</html>

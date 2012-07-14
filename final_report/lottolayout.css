@@ -1,0 +1,748 @@
+@charset "UTF-8";
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	background: #a0c461;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #000000;
+}
+img {
+	border: none;
+}
+img a {
+	border: none;
+}
+a {
+	color: #67B021;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: 1px solid #ccc;
+	padding: 6px;
+}
+a img:hover {
+	border: 1px solid #a0c461;
+}
+form h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+	width: 95%;
+	color: #777;
+	border-bottom: 1px solid #a0c461;
+	padding: 0 0 2px 3px;
+	margin: 15px 0 7px 0;
+}
+input[type="text"], input[type="password"], textarea {
+	border: 1px solid #777;
+	padding: 2px;
+	margin: 0 0 10px 0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+input[type="text"].bigger, input[type="password"].bigger, textarea.bigger {
+    font-size: 18px;
+}
+form #form_actions {
+    font-size: 13px;
+    text-align: center;
+    padding: 15px 0 0 0;
+    clear: both;
+}
+label {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+label.above {
+    display: block;
+    margin-bottom: 2px;
+}
+span.form_error {
+    font-family: Verdana, Arial, Helvatica, sans-serif;
+    font-size: 12px;
+    color: red;
+    margin-left: 10px;
+}
+input[type="submit"], input[type="reset"] {
+	background: #A0C461;
+	color: #fff;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0px;
+	padding: 4px;
+	border: 1px solid #777;
+	cursor: pointer;
+}
+input[type="submit"]:hover, input[type="reset"]:hover {
+	background: #67b021;
+}
+a.button {
+	background: #A0C461;
+	color: #fff;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0px;
+	padding: 4px;
+	border: 1px solid #777;
+	cursor: pointer;
+}
+a.button:hover {
+	background: #67b021;
+}
+div.form_row {
+	clear: left;
+	padding-bottom: 5px;
+}
+.float_right { float: right; }
+.float_left { float: left; }
+
+
+/* MAIN LAYOUT (applies to every page) */
+#container  {
+	width: 900px;
+	margin: 0 auto;
+	text-align: left;
+}
+#header {
+	color: #eee;
+	margin: 0;
+	padding: 8px 0 0 0;
+}
+#header a {
+	font-size: 12px;
+	text-decoration: none;
+	color: #fdf7b3;
+}
+#header a:hover {
+	text-decoration: underline;
+}
+#header h1 {
+	display: inline;
+	width: 500px;
+	margin: 0;
+	padding: 0;
+}
+#header #minornav {
+	float: right;
+}
+#header h2#banner {
+	float: right;
+	color: #fafafa;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	margin: 45px 10px 0 0;
+}
+#header ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 60px 10px 0 0;
+	padding: 0;
+}
+#header ul li {
+	padding: 0 4px 0 8px;
+	display: inline;
+	border-left: 1px solid #eee;
+}
+#header li.nav_first_item {
+	padding-left: 0;
+	border: none;
+}
+#mainContent {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding: 15px;
+	background: #fafafa;
+    overflow: auto;
+}
+#mainContent h1, #mainContent h2, #mainContent h3 {
+	padding: 0;
+	margin: 15px 0 5px 0;
+}
+#mainContent h1 {
+	font-size: 30px;
+}
+#mainContent h1.narrow {
+	margin-top: 0;
+}
+#mainContent h2 {
+	font-size: 22px;
+}
+#mainContent h3 {
+	font-size: 16px;
+}
+#mainContent p {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	line-height: 20px;
+	margin: 15px 0;
+}
+#footer  {
+	clear: both;
+	color: #eee;
+	margin: 10px 0;
+	padding: 0 10px;
+}
+#footer p  {
+	text-align: right;
+	margin: 0;
+	font-size: 12px;
+}
+
+/* TWO-COLUMN LAYOUT (used on most pages. sidebar can be on left or
+   right depending on which classes are used) */
+#main_col {
+	min-height: 300px;
+	width: 634px;
+}
+#main_col.on_left {
+	border-right: 1px solid #fdf7b3;
+	padding: 0 20px 0 0;
+	margin: 0;
+}
+#main_col.on_right {
+	border-left: 1px solid #fdf7b3;
+	padding: 0 0 0 20px;
+	margin: 0 0 0 215px;
+}
+#sidebar {
+	width: 200px;
+}
+#sidebar.on_left {
+	float: left;
+}
+#sidebar.on_right {
+	float: right;
+}
+#sidebar p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 15px;
+}
+#sidebar h3 {
+	font-size: 12px;
+    font-weight: bold;
+	width: 95%;
+	color: #777;
+	border-bottom: 1px solid #a0c461;
+	padding: 0 0 3px 0;
+	margin: 15px 0 7px 0;
+}
+
+/* STUDENT SPLASH/LOGIN SCREEN */
+#login_user, #login_pass {
+	font-size: 12px;
+    width: 115px;
+    padding: 1px;
+    margin: 0;
+}
+#login_send {
+	float: right;
+}
+#login_box {
+	-moz-border-radius-topleft: 7px;
+	-moz-border-radius-bottomleft: 7px;
+	-webkit-border-top-left-radius: 7px;
+	-webkit-border-bottom-left-radius: 7px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	background: #fdf7b3;
+	margin-right: -15px;
+	padding: 10px;
+}
+#login_box p {
+	padding: 0;
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 18px;
+	margin: 0 0 10px 0;
+}
+#login_box label {
+	width: 70px;
+	font-size: 12px;
+	text-align: right;
+	padding-right: 5px;
+	float: left;
+}
+#sidebar #upcoming {
+	clear: both;
+	margin-top: 30px;
+	padding-left: 10px;
+}
+#sidebar #upcoming .event_name {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 20px;
+	margin: 2px 0;
+	padding: 0;
+}
+#sidebar #upcoming .event_time {
+	font-size: 13px;
+	line-height: 15px;
+	margin: 2px 0;
+	padding: 0;
+}
+#sidebar #upcoming .event_venue {
+	font-size: 13px;
+	line-height: 15px;
+	margin: 2px 0;
+	padding: 0;
+}
+
+
+/* STUDENT HOME SCREEN */
+#upcoming_events {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	width: 620px;
+	padding: 0;
+	margin: 20px auto 0 ;
+}
+#upcoming_events > li {
+	padding: 10px;
+	border-top: 1px solid #fdf7b3;
+	overflow: auto;
+	width: 600px;
+}
+#upcoming_events > li.first_event {
+	border-top: none;
+}
+
+#upcoming_events h2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 30px;
+	color: #444;
+	margin: 0;
+	padding: 0;
+}
+#upcoming_events h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+#upcoming_events ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	padding: 0;
+	margin: 6px 0 0 0;
+}
+#upcoming_events ul li {
+	margin: 2px 0 0 0;
+	padding: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+}
+#upcoming_events p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+	margin: 8px 0 0 0;
+	padding: 0;
+}
+#upcoming_events .regopen {
+	background: #fdf7b3;
+    border-top: 1px solid #fafafa;
+}
+#upcoming_events div.event_action {
+	width: 150px;
+	min-height: 100px;
+	float: right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin: 0 0 0 15px;
+	padding: 25px 0 0 0;
+	text-align: center;
+}
+#upcoming_events div.event_action a {
+    cursor: pointer;
+}
+#upcoming_events div.event_action a.big_button {
+	background: #A0C461;
+	color: #fff;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	height: 70px;
+	width: 150px;
+	margin: 0;
+	padding: 10px;
+	border: 1px solid #777;
+}
+#upcoming_events div.event_action a.big_button:hover {
+	background: #67b021;
+}
+.login_error {
+    font-family: Verdana, Arial, Helvatica, sans-serif;
+    font-size: 12px;
+    color: red;
+}
+
+
+/* ADMIN LOGIN */
+#adm_login_box {
+	width: 200px;
+	margin: 0 auto;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+#adm_login_box label, #adm_login_box input {
+	display: block;
+}
+#adm_login_user, #adm_login_pass {
+	margin-bottom: 10px;
+	width: 100%;
+	font-size: 18px;
+
+}
+#adm_login_send {
+	margin: 0 auto;
+}
+
+/* ADMIN HOME SCREEN */
+/* this screen uses the two-column layout and upcoming_events stuff listed
+   above, so this section only needs to include the additional rules */
+#venue_list {
+    list-style-image: none;
+	list-style-position: outside;
+	list-style-type: square;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0 0 0 1em;
+    margin-left: 7px;
+}
+#venue_list li {
+    margin-bottom: 4px;
+}
+#addEvent {
+    float: right;
+    margin: 1px 8px 0 0;
+    padding: 8px;
+}
+
+
+/* ADD/EDIT VENUE */
+#edit_venue {
+    width: 350px;
+    margin: 10px auto 0;
+}
+#edit_venue #venueName {
+    width: 100%;
+}
+#edit_venue #venueAddr1, #edit_venue #venueAddr2 {
+    width: 300px;
+}
+#edit_venue #venueCity {
+    width: 150px;
+}
+#edit_venue #venueState {
+    width: 24px;
+}
+#edit_venue #venueZip {
+    width: 80px;
+}
+#edit_venue .addr_part {
+    float: left;
+    margin-right: 15px;
+}
+
+/* ADD/EDIT EVENT */
+#edit_event {
+    width: 400px;
+    margin: 10px auto 0;
+}
+#edit_event #eventName {
+    width: 100%;
+}
+#edit_event #eventVenue {
+    width: 100%;
+    font-size: 14px;
+    padding: 4px;
+    margin: 0;
+}
+#edit_event select {
+    margin: 0 3px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+#edit_event .date {
+    margin-right: 12px;
+}
+#edit_event .datetime_fields {
+    margin-top: 20px;
+    padding: 5px;
+}
+
+/* SEATING CHART LAYOUT */
+#seats_col {
+	min-height: 300px;
+	width: 735px;
+	border-left: 1px solid #fdf7b3;
+	padding: 0 0 0 15px;
+	margin: 0 0 0 115px;
+	overflow: auto;
+}
+#section_list_col {
+	width: 110px;
+	float: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#section_list_col h2 {
+	font-weight: bold;
+	font-size: 14px;
+}
+#section_list_col ul {
+	padding: 0;
+	margin: 0 0 10px 0;
+	font-size: 12px;
+	list-style-image: none;
+	list-style-position: inside;
+	list-style-type: square;
+}
+#section_list_col ul li {
+    color: #a0c461;
+    cursor: pointer;
+    text-decoration: none;
+}
+#section_list_col ul li:hover {
+    text-decoration: underline;
+}
+#section_list_col ul li.selected {
+    color: #000;
+    font-weight: bold;
+    cursor: default;
+}
+#section_list_col ul li.selected:hover {
+    text-decoration: none;
+}
+#seats_col h2 {
+	font-size: 16px;
+    margin-bottom: 9px;
+    font-weight: normal;
+}
+#seats_col h2 #cur_section {
+    font-weight: bold;
+}
+#seats_col #instructions {
+    width: 300px;
+    margin: 40px auto 0;
+    font-size: 15px;
+    line-height: 24px;
+}
+#add_rows_num, #add_seats_num {
+    width: 30px;
+    font-weight: bold;
+}
+#add_rows_slider, #add_seats_slider {
+    margin: 4px 0 10px 0;
+    display: block;
+}
+#add_rows_form, #add_section_form {
+    padding: 15px;
+    text-align: left;
+}
+#add_rows_form input, #add_section_form input {
+    width: 100%;
+}
+
+#seat_chart {
+	font-size: 9px;
+	overflow: auto;
+	padding: 20px 0 0 0;
+	margin: 0;
+    width: 100%;
+}
+#seat_chart > li {
+	display: block;
+	clear: left;
+	overflow: hidden;
+	margin-bottom: 4px;
+}
+#seat_chart ul {
+	margin: 0;
+	padding: 0 0 0 51px;
+}
+#seat_chart ul li {
+	clear: none;
+	float: left;
+	display: block;
+	height: 12px;
+	width: 16px;
+	padding: 7px 0;
+	margin: 0 4px 4px 0;
+	background: #ccc;
+	text-align: center;
+    overflow: hidden;
+}
+#seat_chart .rowmarker {
+	font-weight: bold;
+	width: 17px;
+	float: left;
+	padding: 7px 3px;
+	margin: 0 4px 4px 0;
+	display: block;
+    text-align: right;
+    cursor: move;
+}
+#seat_chart a {
+	float: left;
+	display: block;
+	background: #fdf7b3;
+	color: #777;
+	font-weight: bold;
+	height: 12px;
+	width: 10px;
+	padding: 7px 3px;
+	margin: 0 8px 4px 0;
+	text-align: center;
+}
+#seat_chart a:hover {
+	text-decoration: none;
+	background: #a0c461;
+	color: #fafafa;
+}
+#seat_chart li.ui-selected {
+	background: #a0c461;
+}
+#seat_chart li.ui-selecting {
+	background: #aaa;
+}
+
+/* STUDENT HOME SCREEN */
+/* with lots of dialogs to style */
+.confirm_dialog {
+    text-align: left;
+}
+.confirm_dialog .msg_prompt {
+    font-weight: bold;
+}
+#lotto_register {
+    text-align: left;
+}
+#lotto_register .msg_prompt {
+    font-weight: bold;
+    margin: 4px 0 8px 0;
+}
+#lotto_register form {
+    padding: 4px;
+}
+#lotto_register label {
+    display: block;
+    margin-bottom: 5px;
+}
+#lotto_register #newgroup_entry {
+    margin: 8px 0 0 25px;
+}
+#lotto_register #newgroup_entry label {
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+#lotto_register #newgroup_name {
+    width: 90%;
+}
+#lotto_register #curgroup_entry {
+    margin: 4px 0 12px 25px;
+    font-weight: bold;
+}
+#lotto_register #curgroup_name {
+    font-weight: normal;
+}
+#lotto_register a {
+    font-weight: normal;
+    color: #67B021;
+}
+#find_groups {
+    text-align: left;
+}
+#find_groups form {
+    width: 85%;
+    margin: 0 auto;
+}
+#find_groups_searchfor {
+    width: 73%;
+}
+#find_groups_results {
+    width: 99%;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin: 10px 0 0 0;
+    background: #fafafa;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 0;
+    line-height: 14px;
+    overflow: auto;
+}
+#group_list {
+    list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+    padding: 6px;
+    margin: 0;
+}
+#group_list li {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+    margin: 0;
+}
+#group_list li.no_border {
+    border: none;
+}
+#group_list li h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+    padding: 0;
+    color: #000;
+}
+#group_list li p {
+    font-size: 11px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+#group_list li .name {
+    font-weight: bold;
+    color: #000;
+}
+#group_list a.button {
+    float: right;
+    height: 21px;
+    width: 60px;
+    padding-top: 8px;
+    margin-right: 20px;
+    color: #fff;
+    text-align: center;
+}

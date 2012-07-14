@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.MailingAddress" table="mailingAddress">
+    <id name="addrId" type="java.lang.Integer">
+      <column name="addrId"/>
+      <generator class="identity"/>
+    </id>
+    <property name="line1" type="string">
+      <column length="60" name="line1"/>
+    </property>
+    <property name="line2" type="string">
+      <column length="60" name="line2"/>
+    </property>
+    <property name="city" type="string">
+      <column length="30" name="city"/>
+    </property>
+    <property name="state" type="string">
+      <column length="15" name="state"/>
+    </property>
+    <property name="zip" type="string">
+      <column length="10" name="zip"/>
+    </property>
+    <property name="country" type="string">
+      <column length="50" name="country"/>
+    </property>
+    <property name="homePhone" type="string">
+      <column length="20" name="homePhone"/>
+    </property>
+    <property name="mobilePhone" type="string">
+      <column length="20" name="mobilePhone"/>
+    </property>
+    <set inverse="true" name="adminInfos">
+      <key>
+        <column name="homeAddr"/>
+      </key>
+      <one-to-many class="lotto.model.AdminInfo"/>
+    </set>
+    <set inverse="true" name="studentInfosForCurrentAddr">
+      <key>
+        <column name="currentAddr"/>
+      </key>
+      <one-to-many class="lotto.model.StudentInfo"/>
+    </set>
+    <set inverse="true" name="studentInfosForPermanentAddr">
+      <key>
+        <column name="permanentAddr"/>
+      </key>
+      <one-to-many class="lotto.model.StudentInfo"/>
+    </set>
+    <set inverse="true" name="studentInfosForInternationalAddr">
+      <key>
+        <column name="internationalAddr"/>
+      </key>
+      <one-to-many class="lotto.model.StudentInfo"/>
+    </set>
+  </class>
+</hibernate-mapping>

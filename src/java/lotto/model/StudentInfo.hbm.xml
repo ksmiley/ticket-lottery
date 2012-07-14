@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.StudentInfo" table="studentInfo">
+    <id name="studentId" type="int">
+      <column name="studentId"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="lotto.model.MailingAddress" fetch="select" name="mailingAddressByCurrentAddr">
+      <column name="currentAddr"/>
+    </many-to-one>
+    <many-to-one class="lotto.model.MailingAddress" fetch="select" name="mailingAddressByInternationalAddr">
+      <column name="internationalAddr"/>
+    </many-to-one>
+    <many-to-one class="lotto.model.MailingAddress" fetch="select" name="mailingAddressByPermanentAddr">
+      <column name="permanentAddr"/>
+    </many-to-one>
+    <property name="username" type="string">
+      <column length="30" name="username" not-null="true" unique="true"/>
+    </property>
+    <property name="password" type="string">
+      <column length="30" name="password" not-null="true"/>
+    </property>
+    <property name="active" type="short">
+      <column name="active" not-null="true"/>
+    </property>
+    <property name="name" type="string">
+      <column length="100" name="name" not-null="true"/>
+    </property>
+    <property name="email" type="string">
+      <column length="100" name="email" not-null="true"/>
+    </property>
+    <property name="birthday" type="timestamp">
+      <column length="19" name="birthday"/>
+    </property>
+    <property name="dateEnrolled" type="timestamp">
+      <column length="19" name="dateEnrolled"/>
+    </property>
+    <property name="expectedGradDate" type="timestamp">
+      <column length="19" name="expectedGradDate"/>
+    </property>
+    <property name="college" type="string">
+      <column length="50" name="college"/>
+    </property>
+    <property name="degree" type="string">
+      <column length="50" name="degree"/>
+    </property>
+    <property name="degreeType" type="string">
+      <column length="20" name="degreeType"/>
+    </property>
+    <property name="loyaltyWeight" type="java.lang.Double">
+      <column name="loyaltyWeight" precision="22" scale="0"/>
+    </property>
+    <set cascade="all-delete-orphan" inverse="true" name="studentGroups">
+      <key>
+        <column name="owner" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.StudentGroup"/>
+    </set>
+    <set cascade="all-delete-orphan" inverse="true" name="lotteryRegistrations">
+      <key>
+        <column name="studentId" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.LotteryRegistration"/>
+    </set>
+    <set cascade="all-delete-orphan" inverse="true" name="lotterySeats">
+      <key>
+        <column name="assignedTo"/>
+      </key>
+      <one-to-many class="lotto.model.LotterySeat"/>
+    </set>
+  </class>
+</hibernate-mapping>

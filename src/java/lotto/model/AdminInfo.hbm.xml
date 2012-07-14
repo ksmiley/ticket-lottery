@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.AdminInfo" table="adminInfo">
+    <id name="adminId" type="java.lang.Integer">
+      <column name="adminId"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="lotto.model.MailingAddress" fetch="select" name="mailingAddress">
+      <column name="homeAddr"/>
+    </many-to-one>
+    <property name="username" type="string">
+      <column length="30" name="username" not-null="true" unique="true"/>
+    </property>
+    <property name="password" type="string">
+      <column length="30" name="password" not-null="true"/>
+    </property>
+    <property name="active" type="short">
+      <column name="active" not-null="true"/>
+    </property>
+    <property name="name" type="string">
+      <column length="100" name="name" not-null="true"/>
+    </property>
+    <property name="email" type="string">
+      <column length="100" name="email" not-null="true"/>
+    </property>
+    <set cascade="all-delete-orphan" inverse="true" name="lotteryEvents">
+      <key>
+        <column name="createdBy" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.LotteryEvent"/>
+    </set>
+  </class>
+</hibernate-mapping>

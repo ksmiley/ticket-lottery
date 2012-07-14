@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <!-- Hibernate/JDBC configuration -->
+
+    <!-- load the database settings from a properties files,
+         so that they're easier to change -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:location="/WEB-INF/jdbc.properties" />
+    
+    <bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://${jdbc.hostname}:${jdbc.port}/${jdbc.database}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="initialSize" value="1"/>
+        <property name="maxActive" value="5"/>
+    </bean>
+    
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="mysqlDataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+            </props>
+        </property>
+        <property name="mappingResources">
+            <list>
+                <value>lotto/model/StudentGroup.hbm.xml</value>
+                <value>lotto/model/StudentInfo.hbm.xml</value>
+                <value>lotto/model/VenueSection.hbm.xml</value>
+                <value>lotto/model/VenueRow.hbm.xml</value>
+                <value>lotto/model/LotteryEvent.hbm.xml</value>
+                <value>lotto/model/LotterySeat.hbm.xml</value>
+                <value>lotto/model/LotteryRegistration.hbm.xml</value>
+                <value>lotto/model/VenueSeat.hbm.xml</value>
+                <value>lotto/model/VenueInfo.hbm.xml</value>
+                <value>lotto/model/MailingAddress.hbm.xml</value>
+                <value>lotto/model/AdminInfo.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--bean id="openSessionInViewInterceptor"
+        class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean-->
+
+    <!-- set up transaction manager. all this is needed because the
+         OpenSessionInView model is used, which would otherwise prevent
+         writing to the database (and that comes in handy) -->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+        <!-- all methods starting with 'get' are read-only -->
+            <tx:method name="get*" read-only="true"/>
+        <!-- other methods use the default transaction settings (see below) -->
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- ensure that the above transactional advice runs for any execution
+         of an operation defined by DAO classes -->
+    <!-- had this for CGLIB-based class targeting, but there's some memory leak
+         with Tomcat/CGLIB that made development too painful:
+         <aop:config proxy-target-class="true">-->
+    <aop:config>
+        <aop:pointcut id="lottoDaoOperation" expression="execution(* lotto.dao.*Dao.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="lottoDaoOperation"/>
+    </aop:config>
+
+    <bean id="txManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+            <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!-- JSON writer, for the view used to do AJAX -->
+    <bean name="jsonWriter" class="org.springframework.web.servlet.view.json.writer.sojo.SojoJsonStringWriter"/>
+
+    <bean id="paramResolver"
+          class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName" value="action"/>
+        <property name="defaultMethodName" value="showMainPage"/>
+    </bean>
+
+    <!-- DAO setup -->
+    <bean id="lotteryEventDao" class="lotto.dao.HibernateLotteryEventDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="venueInfoDao" class="lotto.dao.HibernateVenueInfoDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="userInfoDao" class="lotto.dao.HibernateUserInfoDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+</beans>

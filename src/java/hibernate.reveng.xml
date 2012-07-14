@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-name="adminInfo"
+		match-catalog="ticket_lottery">
+	</table-filter>
+	<table-filter match-name="lotteryEvent"
+		match-catalog="ticket_lottery">
+	</table-filter>
+	<table-filter match-name="lotteryRegistration"
+		match-catalog="ticket_lottery">
+	</table-filter>
+	<table-filter match-name="lotterySeat"
+		match-catalog="ticket_lottery">
+	</table-filter>
+	<table-filter match-name="mailingAddress"
+		match-catalog="ticket_lottery">
+	</table-filter>
+	<table-filter match-name="studentGroup"
+		match-catalog="ticket_lottery">
+	</table-filter>
+	<table-filter match-name="studentInfo"
+		match-catalog="ticket_lottery">
+	</table-filter>
+	<table-filter match-name="venueInfo"
+		match-catalog="ticket_lottery">
+	</table-filter>
+	<table-filter match-name="venueSeat"
+		match-catalog="ticket_lottery">
+	</table-filter>
+    <table-filter match-name="venueRow"
+		match-catalog="ticket_lottery">
+	</table-filter>
+	<table-filter match-name="venueSection"
+		match-catalog="ticket_lottery">
+	</table-filter>
+</hibernate-reverse-engineering>

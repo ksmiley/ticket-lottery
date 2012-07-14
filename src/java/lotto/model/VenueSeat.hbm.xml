@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.VenueSeat" table="venueSeat">
+    <composite-id class="lotto.model.VenueSeatId" name="id">
+      <key-property name="sectionId" type="int">
+        <column name="sectionId"/>
+      </key-property>
+      <key-property name="row" type="int">
+        <column name="row"/>
+      </key-property>
+      <key-property name="seatNo" type="int">
+        <column name="seatNo"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="lotto.model.VenueRow" fetch="select" insert="false" name="venueRow" update="false">
+      <column name="sectionId" not-null="true"/>
+      <column name="row" not-null="true"/>
+    </many-to-one>
+    <set cascade="all-delete-orphan" inverse="true" name="lotterySeats">
+      <key>
+        <column name="section" not-null="true"/>
+        <column name="row" not-null="true"/>
+        <column name="seatNo" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.LotterySeat"/>
+    </set>
+  </class>
+</hibernate-mapping>

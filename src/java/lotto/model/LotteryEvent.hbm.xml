@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.LotteryEvent" table="lotteryEvent">
+    <id name="lotteryId" type="java.lang.Integer">
+      <column name="lotteryId"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="lotto.model.VenueInfo" fetch="select" name="venueInfo">
+      <column name="venue" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="lotto.model.AdminInfo" fetch="select" name="adminInfo">
+      <column name="createdBy" not-null="true"/>
+    </many-to-one>
+    <property name="displayName" type="string">
+      <column length="100" name="displayName" not-null="true"/>
+    </property>
+    <property name="startTime" type="timestamp">
+      <column length="19" name="startTime" not-null="true"/>
+    </property>
+    <property name="endTime" type="timestamp">
+      <column length="19" name="endTime" not-null="true"/>
+    </property>
+    <property name="registerStartTime" type="timestamp">
+      <column length="19" name="registerStartTime" not-null="true"/>
+    </property>
+    <property name="distributionTime" type="timestamp">
+      <column length="19" name="distributionTime" not-null="true"/>
+    </property>
+    <property name="claimEndTime" type="timestamp">
+      <column length="19" name="claimEndTime" not-null="true"/>
+    </property>
+    <property name="cancelEndTime" type="timestamp">
+      <column length="19" name="cancelEndTime" not-null="true"/>
+    </property>
+    <property name="saleEndTime" type="timestamp">
+      <column length="19" name="saleEndTime" not-null="true"/>
+    </property>
+    <set cascade="all-delete-orphan" inverse="true" name="studentGroups">
+      <key>
+        <column name="lottery" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.StudentGroup"/>
+    </set>
+    <set cascade="all-delete-orphan" inverse="true" name="lotterySeats">
+      <key>
+        <column name="lotteryId" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.LotterySeat"/>
+    </set>
+    <set cascade="all-delete-orphan" inverse="true" name="lotteryRegistrations">
+      <key>
+        <column name="lotteryId" not-null="true"/>
+      </key>
+      <one-to-many class="lotto.model.LotteryRegistration"/>
+    </set>
+  </class>
+</hibernate-mapping>

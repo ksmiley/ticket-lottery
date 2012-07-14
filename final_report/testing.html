@@ -1,0 +1,2189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>U Ticket Lottery</title>
+<link href="lottolayout.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+div.MsoNormal {mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	mso-hyphenate:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:.5pt;}
+div.TableContents {mso-style-name:"Table Contents";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:no-line-numbers;
+	mso-hyphenate:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:.5pt;}
+li.MsoNormal {mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	mso-hyphenate:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:.5pt;}
+li.TableContents {mso-style-name:"Table Contents";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:no-line-numbers;
+	mso-hyphenate:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:.5pt;}
+p.MsoNormal {mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	mso-hyphenate:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:.5pt;}
+p.TableContents {mso-style-name:"Table Contents";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:no-line-numbers;
+	mso-hyphenate:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:.5pt;}
+span.GramE {mso-style-name:"";
+	mso-gram-e:yes;}
+span.SpellE {mso-style-name:"";
+	mso-spl-e:yes;}
+-->
+</style>
+</head>
+
+<body>
+
+<div id="container">
+  <div id="header">
+    <h1><img src="lottologo.png" alt="U Ticket Lottery" width="370" height="90" /></h1>
+	<h2 id="banner">CS499 Group 3 Phase II</h2>
+  </div>
+  <div id="mainContent">
+
+
+<div id="sidebar" class="on_left">
+<h3>Table of Contents</h3>
+<ul>
+<li><a href="high_level_design.html">High Level Design</a></li>
+<li><a href="detailed_design.html">Detailed Design</a></li>
+<li><a href="implementation.html">Implementation</a></li>
+<li><a href="testing.html">Testing</a></li>
+<li><a href="metrics.html">Technical Metrics</a></li>
+</ul>
+
+</div>
+<div id="main_col" class="on_right">
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:18.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>1 Test Items
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>The following items are to be
+    tested:
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l2 level1 lfo3;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Student
+      interface
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l2 level1 lfo3;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Manager
+      interface
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l2 level1 lfo3;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Lottery
+      functionality
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:18.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>2 Software Risk Items
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>There are several risks in the testing
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l3 level1 lfo4;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>I.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>The
+      limited amount of stress we can produce on the system
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+    three group members will never be able to duplicate the amount of activity and
+    stress that an entire student body would be able to.<span style="mso-spacerun:
+yes">&nbsp; </span>To compensate, we will unit test each individual function
+    and ensure it <span class="GramE">handles</span> as much use as we can give it.
+  <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l4 level1 lfo5;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>II.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>It is
+      impossible to please everyone with this system.
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+    paraphrase President Abraham Lincoln: “you can please some of the people all of
+    the time and all of the people some of the time but you can't please all of the
+    people all of the time.”<span style="mso-spacerun: yes">&nbsp; </span>As such,
+    we will try to make the system as user-friendly and please as many users as
+    possible.
+  <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:18.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>3 Features To Be Tested
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>The following features of the
+    project need to be tested:
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l5 level1 lfo6;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Student
+      login.
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l5 level1 lfo6;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Student
+      interface performance (register for, decline, accept tickets, etc).
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l5 level1 lfo6;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Manager
+      interface performance (edit seats, create/remove lottery, run lottery, etc).
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l5 level1 lfo6;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>System
+      functionality (run lottery, assign seats, etc)
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l5 level1 lfo6;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Error
+      handling.
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>3.1 Approach
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>No testing
+    tools are available.<span style="mso-spacerun: yes">&nbsp; </span>All test
+    levels shall be implemented manually.<span style="mso-spacerun: yes">&nbsp; </span>The three levels of testing are based on a bottom-up approach and shall
+    verify the project functionality.
+  <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>3.1.1 Unit Testing
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>A
+    unit test will be created for each lower level function in the project.<span
+style="mso-spacerun: yes">&nbsp; </span>Each method will be tested rigorously
+    before being declared acceptable for passing.
+  <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Unit
+    testing will be designed and implemented by the development team.<span
+style="mso-spacerun: yes">&nbsp; </span>Test cases list, output, defect
+    information shall be documented and reported.<span style="mso-spacerun:
+yes">&nbsp; </span>Test cases should be run against each method in the system
+    and should cover all the critical branches.
+  <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>3.1.2 Integration Testing
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Integration
+    testing will be done when the program components come together.<span
+style="mso-spacerun: yes">&nbsp; </span>Much like unit testing, integration
+    testing will be performed by the development team and will be performed upon
+    the completion of each method.
+  <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>3.1.3 System Testing
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class="GramE">Most of the system testing will be done by the customer, with any
+    uncovered bugs or errors being fixed by the development team</span>.<span
+style="mso-spacerun: yes">&nbsp; </span>However, the project will not be
+    delivered without some testing at least.<span style="mso-spacerun: yes">&nbsp; </span>The development team will test all functionality and any potential
+    sources of error they can think of, but will not be expected to find every
+    possible error.<span style="mso-spacerun: yes">&nbsp; </span>Therefore the
+    customer will alert the team whenever an error is found and a prompt fix will
+    be delivered.
+  <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>3.2 Measures and Metrics
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>The following information will be
+    collected and documented through all testing phases:
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l6 level1 lfo7;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Defects by
+      module and severity
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l6 level1 lfo7;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Defect
+      origin
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:.5in;text-indent:-.25in;line-height:150%;
+mso-list:l6 level1 lfo7;tab-stops:list .5in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Time spent
+      on defect
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>3.3 Bug Reports
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Bugs will be reported in the
+    following format:
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><b><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Test Id:</span></b><span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'> The test
+    id given according to the test performed.
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><b><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Severity:</span></b><span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>
+    <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='margin-left:1.0in;text-indent:-.25in;line-height:
+150%;mso-list:l7 level3 lfo8;tab-stops:list 1.0in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Chernobyl-level
+      disaster.<span style="mso-spacerun: yes">&nbsp; </span>System crashes to a
+      halt.
+  <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:1.0in;text-indent:-.25in;line-height:
+150%;mso-list:l7 level3 lfo8;tab-stops:list 1.0in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Tsunami.<span
+style="mso-spacerun: yes">&nbsp; </span>Stops development and testing.
+      <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:1.0in;text-indent:-.25in;line-height:
+150%;mso-list:l7 level3 lfo8;tab-stops:list 1.0in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Train
+      Wreck.<span style="mso-spacerun: yes">&nbsp; </span>Stops progress of other
+      modules.
+  <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:1.0in;text-indent:-.25in;line-height:
+150%;mso-list:l7 level3 lfo8;tab-stops:list 1.0in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Paper
+      Cut.<span style="mso-spacerun: yes">&nbsp; </span><span class="GramE">Stops own
+        progress, but doesn't</span> affect other modules.
+  <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='margin-left:1.0in;text-indent:-.25in;line-height:
+150%;mso-list:l7 level3 lfo8;tab-stops:list 1.0in'>
+    <![if !supportLists]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;;mso-fareast-font-family:
+&quot;Trebuchet MS&quot;;mso-bidi-font-family:&quot;Trebuchet MS&quot;'><span style='mso-list:Ignore'>5.<span
+style='font:7.0pt &quot;Times New Roman&quot;'>&nbsp;&nbsp;&nbsp; </span></span></span>
+    <![endif]>
+    <span
+style='font-size:11.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Workout
+      Plan.<span style="mso-spacerun: yes">&nbsp; </span>Nothing broken, adding
+      functionality.<span style="mso-spacerun: yes">&nbsp; </span>Enhancement.
+  <o:p></o:p>
+    </span></p>
+  <p class="MsoNormal" style='line-height:150%'><b><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Description:
+          <o:p></o:p>
+  </span></b></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class="GramE">Description of the bug, including steps to replicate.</span>
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><b><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>Status:
+          <o:p></o:p>
+  </span></b></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Open:
+    Bug is being worked on.
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Closed:
+    Bug is known but has not been addressed yet.
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><b><span style='font-size:11.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></b></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>3.4 Test Cases
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:13.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3.4.1
+    Unit Test Cases
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" align="center" style='text-align:center;line-height:150%'><span
+style='font-size:13.0pt;line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span
+style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <o:p></o:p>
+  </span></p>
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0"
+ style='margin-left:2.75pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ mso-padding-alt:2.75pt 2.75pt 2.75pt 2.75pt'>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Test No
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Tester
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Init State
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Test
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Expected Result
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Actual Result
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .1pt;background:aqua;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass/Fail
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>1
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Student_Login</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged out
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Login
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Login
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>2
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Lottery_Register</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Not Registered
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Register
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Register
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>3
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Reg_as_Individual</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Not Registered
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Register
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Register
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>4
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Reg_with_Group</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Not Registered
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Register
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Register
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>5
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Reg_Create_Group</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Not Registered
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Register
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Register
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>6
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Show_Lottery_History</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Info on each lottery
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Info on each lottery
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>7
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Decline_Tickets</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Won lottery
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Tickets Declined
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Tickets Declined
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>8
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Search_For_Tickets</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Tickets Leftover
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Tickets Found
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Nothing
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Fail
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>9
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Claim_Tickets</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Won lottery
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Tickets Claimed
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Tickets Claimed
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>10
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Student_Logout</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Logout
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Logout
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>11
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Login_From_One_Loc</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logout on initial login
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Logout
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>12
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Manager_Login</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged out
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Login
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Login
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>13
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Add_Event</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Event Added
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Event Added
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>14
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Modify_Event</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Event Modified
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Event Modified
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>15
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Edit_Venue_Info</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Info Modified
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Info Modified
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>16
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Check_Venue_Input</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Correct Syntax
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Correct Syntax
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>17
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Add_Venue_Sections</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Section Added
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Section Added
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>18
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Manage_Seats</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Rows added, delete selected, undo, save
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Rows added, delete selected, undo, save
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>19
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Finished_Goes_Home</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Edit venue screen
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Home Page
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Home Page
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>20
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Manager_Logout</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Logout
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Logout
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>21
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Login_From_One_Loc_Mgr</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logged in
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Logout on initial Login
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Successful Logout
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr style='mso-yfti-lastrow:yes'>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>22
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Weighted_Random</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Jennifer
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Samples with weights
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Higher weight yield better tickets
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Higher weight yield better tickets
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+  </table>
+  <p class="MsoNormal" style='line-height:150%'><b><span style='font-size:13.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></b></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3.4.2
+    Integration Testing
+        <o:p></o:p>
+  </span></p>
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0"
+ style='margin-left:2.75pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ mso-padding-alt:2.75pt 2.75pt 2.75pt 2.75pt'>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Test No
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Tester
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Init State
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Test
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Expected Result
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Actual Result
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .1pt;background:aqua;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass/Fail
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>1
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Run_Lottery_Calls_Correctly</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Andrew
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>None
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Lottery Runs Fine
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Lottery Runs Fine
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>2
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Lottery_Accepts_Seats</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Andrew
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>None
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Seats Distributed Correctly
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Seats Distributed Correctly
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr style='mso-yfti-lastrow:yes'>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>3
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  class="SpellE"><span style='font-size:13.0pt'>Lottery_Assigns_to_Registered</span></span><span
+  style='font-size:13.0pt'>
+        <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Andrew
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>None
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>See Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Only Registered Get Tickets
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.3pt;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Only Registered Get Tickets
+              <o:p></o:p>
+      </span></p></td>
+      <td width="62" valign="top" style='width:62.35pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:13.0pt'>Pass
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+  </table>
+  <p class="MsoNormal" align="center" style='text-align:center;line-height:150%'><b><span
+style='font-size:13.0pt;line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></b></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><b><span style='font-size:14.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></b></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3.4.3
+    System Testing
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:11.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>The
+    development team will perform system testing by testing all previous tests once
+    the system is declared stable and ready for shipment.<span style="mso-spacerun:
+yes">&nbsp; </span>Ideally, once shipped, any errors encountered by the
+    customer will be minor, and will be fixed by the team in a timely manner.
+  <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><b><span style='font-size:14.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></b></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'>3.5 Reported Bugs
+        <o:p></o:p>
+  </span></p>
+  <p class="MsoNormal" style='line-height:150%'><span style='font-size:14.0pt;
+line-height:150%;font-family:&quot;Trebuchet MS&quot;'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <o:p></o:p>
+  </span></p>
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0"
+ style='margin-left:2.75pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ mso-padding-alt:2.75pt 2.75pt 2.75pt 2.75pt'>
+    <tr>
+      <td width="65" valign="top" style='width:65.25pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center;background:aqua'><span
+  style='font-size:14.0pt'>Test Id
+              <o:p></o:p>
+      </span></p></td>
+      <td width="68" valign="top" style='width:68.25pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Severity
+              <o:p></o:p>
+      </span></p></td>
+      <td width="72" valign="top" style='width:1.0in;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Status
+              <o:p></o:p>
+      </span></p></td>
+      <td width="137" valign="top" style='width:136.5pt;border:solid black 1.0pt;
+  border-right:none;mso-border-top-alt:solid black .1pt;mso-border-left-alt:
+  solid black .1pt;mso-border-bottom-alt:solid black .1pt;background:aqua;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Description
+              <o:p></o:p>
+      </span></p></td>
+      <td width="157" valign="top" style='width:156.75pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .1pt;background:aqua;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Tester
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr>
+      <td width="65" valign="top" style='width:65.25pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>8
+              <o:p></o:p>
+      </span></p></td>
+      <td width="68" valign="top" style='width:68.25pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>5
+              <o:p></o:p>
+      </span></p></td>
+      <td width="72" valign="top" style='width:1.0in;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Open
+              <o:p></o:p>
+      </span></p></td>
+      <td width="137" valign="top" style='width:136.5pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Search for tickets is not implemented yet
+              <o:p></o:p>
+      </span></p></td>
+      <td width="157" valign="top" style='width:156.75pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+    <tr style='mso-yfti-lastrow:yes'>
+      <td width="65" valign="top" style='width:65.25pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>4
+              <o:p></o:p>
+      </span></p></td>
+      <td width="68" valign="top" style='width:68.25pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>4
+              <o:p></o:p>
+      </span></p></td>
+      <td width="72" valign="top" style='width:1.0in;border-top:none;border-left:solid black 1.0pt;
+  border-bottom:solid black 1.0pt;border-right:none;mso-border-left-alt:solid black .1pt;
+  mso-border-bottom-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Open
+              <o:p></o:p>
+      </span></p></td>
+      <td width="137" valign="top" style='width:136.5pt;border-top:none;border-left:
+  solid black 1.0pt;border-bottom:solid black 1.0pt;border-right:none;
+  mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:solid black .1pt;
+  padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Student Register for Lottery &#8594; <span
+  class="SpellE">Registerable</span> &#8594; Register &#8594; With existing group
+        &#8594; Search, then close window &#8594; bring back, window not sized
+        properly
+        <o:p></o:p>
+      </span></p></td>
+      <td width="157" valign="top" style='width:156.75pt;border:solid black 1.0pt;
+  border-top:none;mso-border-left-alt:solid black .1pt;mso-border-bottom-alt:
+  solid black .1pt;mso-border-right-alt:solid black .1pt;padding:2.75pt 2.75pt 2.75pt 2.75pt'><p class="TableContents" align="center" style='text-align:center'><span
+  style='font-size:14.0pt'>Keith
+              <o:p></o:p>
+      </span></p></td>
+    </tr>
+  </table>
+  <p class="MsoNormal" style='line-height:150%'><b><span style='font-size:14.0pt;
+line-height:150%'>
+    <o:p>&nbsp;</o:p>
+  </span></b></p>
+</div>
+
+  </div>
+  <div id="footer">
+    <p>The best little lotto U could get.</p>
+  </div>
+</div>
+</body>
+</html>

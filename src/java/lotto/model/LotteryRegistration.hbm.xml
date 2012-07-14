@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 5, 2009 7:37:44 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="ticket_lottery" name="lotto.model.LotteryRegistration" table="lotteryRegistration">
+    <composite-id class="lotto.model.LotteryRegistrationId" name="id">
+      <key-property name="studentId" type="int">
+        <column name="studentId"/>
+      </key-property>
+      <key-property name="lotteryId" type="int">
+        <column name="lotteryId"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="lotto.model.StudentGroup" fetch="select" name="studentGroup">
+      <column name="groupId"/>
+    </many-to-one>
+    <many-to-one class="lotto.model.LotteryEvent" fetch="select" insert="false" name="lotteryEvent" update="false">
+      <column name="lotteryId" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="lotto.model.StudentInfo" fetch="select" insert="false" name="studentInfo" update="false">
+      <column name="studentId" not-null="true"/>
+    </many-to-one>
+    <property name="registerTime" type="timestamp">
+      <column length="19" name="registerTime" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

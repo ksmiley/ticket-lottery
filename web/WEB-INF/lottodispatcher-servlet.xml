@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+    
+    <!--<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>-->
+    
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="login.htm">staticController</prop>
+                <prop key="home.htm">homeController</prop>
+                <prop key="home_ajax.htm">homeAjaxController</prop>
+
+                <prop key="manage/adminlogin.htm">staticController</prop>
+                <prop key="manage/home.htm">adminHomeController</prop>
+                <prop key="manage/venue.htm">adminVenueController</prop>
+                <prop key="manage/venue_seats.htm">adminVenueSeatsController</prop>
+                <prop key="manage/event.htm">adminEventController</prop>
+                <prop key="manage/event_seats.htm">adminEventSeatsController</prop>
+
+
+                <prop key="static/*.htm">staticController</prop>
+            </props>
+        </property>
+        <!--property name="interceptors">
+            <list>
+                <ref bean="openSessionInViewInterceptor" />
+            </list>
+        </property-->
+    </bean>
+    
+    <!-- Set up two view resolvers. The first reads WEB-INF/views.xml and is
+         needed to setup the jsonView used by AJAX handlers. the other is the
+         default and handles all JSP-based views -->
+    <bean id="xmlViewResolver"
+          class="org.springframework.web.servlet.view.XmlViewResolver" />
+
+    <bean id="jspViewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:viewClass="org.springframework.web.servlet.view.JstlView"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+    
+    <!--
+    The index controller.
+    -->
+    <bean name="homeController" class="lotto.control.HomeController">
+        <property name="lotteryEventDao" ref="lotteryEventDao" />
+    </bean>
+
+    <bean name="homeAjaxController" class="lotto.control.HomeAjaxController">
+        <property name="methodNameResolver" ref="paramResolver"/>
+        <property name="lotteryEventDao" ref="lotteryEventDao" />
+        <property name="userInfoDao" ref="userInfoDao" />
+    </bean>
+
+    <bean name="staticController" class="lotto.control.StaticController"/>
+
+    <!-- ADMIN INTERFACE CONTROLLERS -->
+    <bean name="adminHomeController" class="lotto.control.admin.AdminHomeController">
+        <property name="lotteryEventDao" ref="lotteryEventDao" />
+        <property name="venueInfoDao" ref="venueInfoDao" />
+    </bean>
+
+    <bean name="adminVenueController" class="lotto.control.admin.AdminVenueController">
+        <property name="venueInfoDao" ref="venueInfoDao"/>
+    </bean>
+
+    <bean name="adminVenueSeatsController" class="lotto.control.admin.AdminVenueSeatsController">
+        <property name="methodNameResolver" ref="paramResolver"/>
+        <property name="venueInfoDao" ref="venueInfoDao"/>
+    </bean>
+
+    <bean name="adminEventSeatsController" class="lotto.control.admin.AdminEventSeatsController">
+        <property name="methodNameResolver" ref="paramResolver"/>
+        <property name="lotteryEventDao" ref="lotteryEventDao"/>
+        <property name="venueInfoDao" ref="venueInfoDao"/>
+    </bean>
+
+    <bean name="adminEventController" class="lotto.control.admin.AdminEventController">
+        <property name="lotteryEventDao" ref="lotteryEventDao"/>
+        <property name="venueInfoDao" ref="venueInfoDao"/>
+        <property name="userInfoDao" ref="userInfoDao" />
+    </bean>
+</beans>
