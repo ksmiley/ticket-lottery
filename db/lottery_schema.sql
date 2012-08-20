@@ -245,3 +245,6 @@ alter table lotteryEvent add constraint fk_event_admin
 alter table venueSeat add constraint fk_row_seat 
     foreign key (sectionId,row)
     references venueRow (sectionId,row) on delete cascade;
+
+-- Create a default admin user.
+insert into adminInfo (username, password, active, name, email, homeAddr) values (NULL, 'admin', SHA1('admin'), 1, 'Default Administrator', 'admin@example.com', NULL);
