@@ -38,7 +38,7 @@ However, there is no user management because we expected it to be integrated wit
 
 There are also no ticket purchasing screens because we expected most of the work to be handled by an external vendor.
 
-Most importantly, there is no ticket distribution, because we didn't get to it in time. We also did not have much guidance on what logic to use or what factors to consider when choosing whether a specfic user gets tickets. For example, if a user has won before, should that person be eligibile to win more tickets, disqualified from the next lottery, have their probability of winning reduced, or something else? What if one member of a group won previously but the others had not?
+Most importantly, there is no ticket distribution, because we didn't get to it in time. We also did not have much guidance on what logic to use or what factors to consider when choosing whether a specific user gets tickets. For example, if a user has won before, should that person be eligible to win more tickets, disqualified from the next lottery, have their probability of winning reduced, or something else? What if one member of a group won previously but the others had not?
 
 * * *
 
